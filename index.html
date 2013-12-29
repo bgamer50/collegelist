@@ -1,23 +1,50 @@
 <!DOCTYPE HTML>
 <head>
+<script>
 
+var name = "John Smith";
+
+</script>
 <style>
 p {
 	font-family:"Helvetica";
 	font-size:13px;
-	background-color:#d0e4fe;	
+	background-color:#d0e4fe;
+	width:10%;
 	}
 h1 {
 	font-family:"Helvetica";
 	font-size:20px;
 }
+table.main {
+	font-family:"Helvetica";
+	border-collapse: separate;
+	border-spacing: 1em 0.5em;
+	background-color: #d0e4fe;
+	text-align:center;
+}
+table.main tr th thead {
+	font-size:16px;
+}
+table.main tr td tbody {
+	font-size:14px;
+}
+
 </style>
 
 </head>
 <body>
 
-<h1>College List</h1>
-<p>Good afternoon<br/><br/><br/><br/><br/></p>
+<h1><script>document.write(name)</script>'s College List</h1>
+<table class="main">
 
+<thead><tr>
+<th>College</th><th>Sentiment</th>
+</thead>
+<tr><tbody>
+<td>Virginia Tech</td><td>:)</td>
+</tbody>
+
+</table>
 
 </body>
