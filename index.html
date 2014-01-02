@@ -3,6 +3,7 @@
 <script>
 
 var name = "John Smith";
+var matrix = [ ["Virginia Tech", ":)"], ["UVA", ":|"], ["UIUC", ":)"], ["Cornell", ":0"] ];
 
 </script>
 <style>
@@ -40,11 +41,14 @@ table.main tr td tbody {
 
 <thead><tr>
 <th>College</th><th>Sentiment</th>
-</thead>
-<tr><tbody>
-<td>Virginia Tech</td><td>:)</td>
-</tbody>
-
+</tr></thead>
+<tbody><script>
+for(k = 0; k < matrix.length; k++) {
+	document.write("<tr><td>" + matrix[k][0] + "</td>  <td>" + matrix[k][1] + "</td></tr>");
+}
+</script></tbody>
 </table>
+
+<button>Edit</button>
 
 </body>
