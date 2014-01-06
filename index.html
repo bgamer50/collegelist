@@ -1,9 +1,15 @@
 <!DOCTYPE HTML>
 <head>
-<script>
+<script type="text/javascript" src="/jquery"></script>
+<script type="application/javascript">
 
 var name = "John Smith";
 var matrix = [ ["Virginia Tech", ":)"], ["UVA", ":|"], ["UIUC", ":)"], ["Cornell", ":0"] ];
+var editing = 0;
+
+function edit() {
+	$.post("/edit", "1");
+}
 
 </script>
 <style>
@@ -43,12 +49,17 @@ table.main tr td tbody {
 <th>College</th><th>Sentiment</th>
 </tr></thead>
 <tbody><script>
-for(k = 0; k < matrix.length; k++) {
-	document.write("<tr><td>" + matrix[k][0] + "</td>  <td>" + matrix[k][1] + "</td></tr>");
-}
+if(window.editing == 0)
+	for(k = 0; k < window.matrix.length; k++) {
+		document.write("<tr><td>" + window.matrix[k][0] + "</td>  <td>" + window.matrix[k][1] + "</td></tr>");
+	}
+else
+	for(k = 0; k < window.matrix.length; k++) {
+		document.write("<tr><td>" + window.matrix[k][0] + "</td>  <td>" + window.matrix[k][1] + "</td>  <td>" + "-" + "</td></tr>");
+	}	
 </script></tbody>
 </table>
 
-<button>Edit</button>
+<button onclick="JavaScript:edit()">Edit</button>
 
 </body>

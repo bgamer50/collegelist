@@ -3,7 +3,7 @@ import web
 import json
 import sqlite3 as sql
 
-urls = ('/', "index")
+urls = ('/', "index", "/jquery", "jquery")
 database = "./data/main.db"
 
 class index:
@@ -12,6 +12,11 @@ class index:
 		return html
 	def POST(self):
 		pass
+
+class jquery:
+	def GET(self):
+		html = open("./jquery.js").read()
+		return html
 
 if __name__ == "__main__":
 	app = web.application(urls, globals())
