@@ -1,11 +1,13 @@
 <!DOCTYPE HTML>
 <head>
+<title>College List</title>
 <script type="text/javascript" src="/jquery"></script>
 <script type="application/javascript">
 
 var name = "John Smith";
 var matrix = [ ["Virginia Tech", ":)"], ["UVA", ":|"], ["UIUC", ":)"], ["Cornell", ":0"] ];
-var editing = 0;
+$.get("/edit");
+var editing = 1;
 
 function edit() {
 	$.post("/edit", "1");
