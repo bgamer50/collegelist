@@ -16,7 +16,7 @@ class index:
 class edit:
 	def POST(self):
 		editing = str(web.input()).split("'")[1]
-		cursor = sql.connect(database)
+		cursor = sql.connect(database).cursor()
 		try:
 			cursor.execute("update users set editing='" + str(editing) + "' where name='John Smith'")
 		except:
